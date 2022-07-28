@@ -1,8 +1,8 @@
 from bytewax import Dataflow
-from ForcastCore import *
+from ForecastCore import *
 from Ftx import FtxClient
 
-client = FtxClient('Your FTX Ket','Your FTX Secret')
+client = FtxClient('Your FTX Key','Your FTX Secret')
 startDate = datetime.datetime(2022,7,1,0,0,0)
 endDate = datetime.datetime.utcnow()
 unixStartDate = calendar.timegm(startDate.utctimetuple())
@@ -14,12 +14,12 @@ Bytewaxflow.capture()
 
 correctChoice=True
 while correctChoice:
-    choice=input("Choose which market focast you want  \n 1 - BTC/USD \n 2 - ETH/USD \n your pick :  ")
+    choice=input("Choose which market you want to forecast \n 1 - BTC/USD \n 2 - ETH/USD \n your pick :  ")
     if int(choice) == 1:
         cryptoForcast('BTC','BTC/USD', Bytewaxflow, client,  unixStartDate, unixEndDate)
         break;
     elif int(choice)==2:
-        cryptoForcast('ETH','BTC/USD', Bytewaxflow, client,  unixStartDate, unixEndDate)
+        cryptoForcast('ETH','ETH/USD', Bytewaxflow, client,  unixStartDate, unixEndDate)
         break;
     print('Wrong choice, please input either 1 or 2')
     
