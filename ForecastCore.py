@@ -39,7 +39,7 @@ def create_dataset(dataframe):
     yArray = np.array(yArray)
     return xArray,yArray
 
-def cryptoForcast(Filename, market, Bytewaxflow, FtxClient,  unixStartDate, unixEndDate):
+def cryptoForecast(Filename, market, Bytewaxflow, FtxClient,  unixStartDate, unixEndDate):
     runDataFlow(Filename, market, Bytewaxflow, FtxClient,  unixStartDate, unixEndDate)
     df = pd.read_csv(Filename+'.csv')
     df.shape
